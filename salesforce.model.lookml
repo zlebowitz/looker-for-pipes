@@ -9,6 +9,7 @@
   - join: opportunity
     sql_on: ${opportunity.account_id} = ${account.id}
     relationship: one_to_many
+    view_label: 'Opportunity'
 
 - explore: campaign
 
@@ -23,6 +24,7 @@
   - join: account
     sql_on: ${account.id} = ${lead.converted_account_id}
     relationship: many_to_one
+    type: inner
     
   - join: opportunity
     sql_on: ${opportunity.id} = ${lead.converted_opportunity_id}
